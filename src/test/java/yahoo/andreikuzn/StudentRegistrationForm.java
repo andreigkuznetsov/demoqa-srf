@@ -22,7 +22,7 @@ public class StudentRegistrationForm {
         //открываем страницу с формой
         open("https://demoqa.com/automation-practice-form");
 
-        //скрол страницы максимально вниз, т.к. нижнюю видимую часть формы закрывает баннер
+        //скрол страницы, т.к. нижнюю видимую часть формы закрывает баннер
         $("#submit").scrollIntoView(true);
 
         //заполняем и отправляем форму
