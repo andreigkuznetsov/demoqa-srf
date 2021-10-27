@@ -20,15 +20,20 @@ public class StudentRegistrationForm {
     @Test
     void fillRegFormTest() {
         open("https://demoqa.com/automation-practice-form");
+
+        //скрол страницы максимально вниз, т.к. нижнюю видимую часть формы закрывает баннер
+        $("#submit").scrollIntoView(true);
+
+        //заполняем и отправляем форму
         $("#firstName").setValue("Andrey");
         $("#lastName").setValue("Kuznetsov");
         $("#userEmail").setValue("andrey@kuznetsov.com");
         $(byText("Male")).click();
         $("#userNumber").setValue("8950789456");
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOptionByValue("10");
-        $(".react-datepicker__year-select").selectOptionByValue("1976");
-        $$(".react-datepicker__day").find(text("13")).click();
+        $(".react-datepicker__month-select").selectOptionByValue("9");
+        $(".react-datepicker__year-select").selectOptionByValue("1996");
+        $$(".react-datepicker__day").find(text("15")).click();
         $("#subjectsInput").click();
         $("#subjectsInput").sendKeys("c");
         $(byText("Economics")).click();
@@ -37,15 +42,24 @@ public class StudentRegistrationForm {
         $("#uploadPicture").uploadFile(image);
         $("#currentAddress").setValue("Russia");
         $("#state").click();
-        $(byText("NCR")).click();
+        $(byText("Rajasthan")).click();
         $("#city").click();
-        $(byText("Delhi")).click();
-        $("#submit").scrollIntoView(true);
+        $(byText("Jaiselmer")).click();
         $("#submit").click();
 
 
+        //проверяем введенные данные и закрываем модальное окно
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        $x("/html/body/div[4]/div/div/div[2]/div/table").shouldHave(text("Andrey Kuznetsov"),
+                text("andrey@kuznetsov.com"), text("Male"), text("8950789456"), text("15 October,1996"),
+                text("Economics"), text("Sports"), text("pic.jpg"),
+                text("Russia"), text("Rajasthan Jaiselmer"));
+        $("#closeLargeModal").click();
 
-                //$("#submit").click();
+
+
+
+
 
         //$("#output #name").shouldHave(text("Some name"));
         //$("#output").$("#email").shouldHave(text("aaa@aa.aa"));
