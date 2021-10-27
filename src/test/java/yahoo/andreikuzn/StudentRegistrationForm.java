@@ -19,6 +19,7 @@ public class StudentRegistrationForm {
 
     @Test
     void fillRegFormTest() {
+        //открываем страницу с формой
         open("https://demoqa.com/automation-practice-form");
 
         //скрол страницы максимально вниз, т.к. нижнюю видимую часть формы закрывает баннер
@@ -55,18 +56,5 @@ public class StudentRegistrationForm {
                 text("Economics"), text("Sports"), text("pic.jpg"),
                 text("Russia"), text("Rajasthan Jaiselmer"));
         $("#closeLargeModal").click();
-
-
-
-
-
-
-        //$("#output #name").shouldHave(text("Some name"));
-        //$("#output").$("#email").shouldHave(text("aaa@aa.aa"));
-        //$("#output").$("#currentAddress").shouldHave(text("Some address"));
-        //$("#output").$("#permanentAddress").shouldHave(text("Another address"));
-
-//        $("#output").shouldHave(text("Some name"), text("aaa@aa.aa"),
-//                text("Some address"), text("Another address"));
     }
 }
