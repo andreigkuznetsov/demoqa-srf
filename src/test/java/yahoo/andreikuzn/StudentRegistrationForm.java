@@ -32,7 +32,7 @@ public class StudentRegistrationForm {
         $(byText("Male")).click();
         $("#userNumber").setValue("8950789456");
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOptionByValue("9");
+        $(".react-datepicker__month-select").selectOptionByValue("11");
         $(".react-datepicker__year-select").selectOptionByValue("1996");
         $$(".react-datepicker__day").find(text("15")).click();
         $("#subjectsInput").click();
