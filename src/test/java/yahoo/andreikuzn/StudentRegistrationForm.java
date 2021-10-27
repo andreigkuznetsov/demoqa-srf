@@ -36,7 +36,7 @@ public class StudentRegistrationForm {
         $(".react-datepicker__year-select").selectOptionByValue("1996");
         $$(".react-datepicker__day").find(text("15")).click();
         $("#subjectsInput").click();
-        $("#subjectsInput").sendKeys("c");
+        $("#subjectsInput").setValue("c");
         $(byText("Economics")).click();
         $(byText("Sports")).click();
         File image = new File("src/test/resources/pic.jpg");
