@@ -26,8 +26,8 @@ public class StudentRegistrationForm {
 
         //заполняем и отправляем форму
         $("#firstName").setValue("Andrey");
-        $("#lastName").setValue("Kuznetsov");
-        $("#userEmail").setValue("andrey@kuznetsov.com");
+        $("#lastName").setValue("Smith");
+        $("#userEmail").setValue("andrey@Smith.com");
         $(byText("Male")).click();
         $("#userNumber").setValue("8950789456");
         $("#dateOfBirthInput").click();
@@ -50,8 +50,8 @@ public class StudentRegistrationForm {
 
         //проверяем введенные данные и закрываем модальное окно
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $x("/html/body/div[4]/div/div/div[2]/div/table").shouldHave(text("Andrey Kuznetsov"),
-                text("andrey@kuznetsov.com"), text("Male"), text("8950789456"), text("15 October,1996"),
+        $x("/html/body/div[4]/div/div/div[2]/div/table").shouldHave(text("Andrey Smith"),
+                text("andrey@Smith.com"), text("Male"), text("8950789456"), text("15 October,1996"),
                 text("Economics"), text("Sports"), text("pic.jpg"),
                 text("Russia"), text("Rajasthan Jaiselmer"));
         $("#closeLargeModal").click();
