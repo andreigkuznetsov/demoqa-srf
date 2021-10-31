@@ -29,7 +29,7 @@ public class StudentRegistrationForm {
         $("#firstName").setValue("Andrey");
         $("#lastName").setValue("Smith");
         $("#userEmail").setValue("andrey@Smith.com");
-        $("#genterWrapper").$(byText("Male")).click(); //добавил первый селектор
+        $("#genterWrapper").$(byText("Male")).click(); 
         $("#userNumber").setValue("8950789456");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOptionByValue("9");
