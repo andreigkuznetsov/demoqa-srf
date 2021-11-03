@@ -30,10 +30,5 @@ public class GitHubSoftAccertions {
                 .shouldHave(text("@ExtendWith"));
         $x("//*[@id=\"wiki-body\"]/div[1]/div[5]/pre/span[2]")
                 .shouldHave(text("SoftAssertsExtension"));
-
-
-
-
-
     }
 }
