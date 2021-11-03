@@ -13,15 +13,21 @@ public class GitHubSoftAccertions {
     void checkGithubWikiPage() {
         // Открыть страницу Selenide в Github
         open ("https://github.com/selenide/selenide");
-                $("#repository-container-header").shouldHave(text("selenide / selenide"));
+        $("#repository-container-header").shouldHave(text("selenide / selenide"));
         // Перейти в раздел Wiki проекта
-        $("#repository-container-header").$(byText("Wiki")).click();
+        $("#wiki-tab").click();
+        $("#user-content-welcome-to-the-selenide-wiki").closest("h1")
+                .shouldHave(text("Welcome to the selenide wiki!"));
         // Убедиться, что в списке страниц (Pages) есть страница SoftAssertion
         // Открыть страницу SoftAssertions,
         $(".markdown-body").$(byText("Soft assertions")).click();
+        $(".gh-header-title").shouldHave(text("SoftAssertions"));
         //проверить, что внутри есть пример кода для JUnit5
+        $x("//*[@id=\"wiki-body\"]/div[1]/ol[4]/li").shouldHave(text("Using JUnit5 extend test class:"));
         $x("//*[@id=\"wiki-body\"]/div[1]/div[5]/pre/span[1]")
-                .shouldHave(exactText("@ExtendWith"));
+                .shouldHave(text("@ExtendWith"));
+        $x("//*[@id=\"wiki-body\"]/div[1]/div[5]/pre/span[2]")
+                .shouldHave(text("SoftAssertsExtension"));
 
 
 
