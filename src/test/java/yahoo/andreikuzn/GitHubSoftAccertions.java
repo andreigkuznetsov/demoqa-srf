@@ -23,6 +23,8 @@ public class GitHubSoftAccertions {
         $(".markdown-body").$(byText("Soft assertions")).click();
         $(".gh-header-title").shouldHave(text("SoftAssertions"));
         //проверить, что внутри есть пример кода для JUnit5
+        $x("//*[@id=\"wiki-body\"]/div[1]/ol[1]/li[3]/code")
+                .shouldHave(text("com.codeborne.selenide.junit5.SoftAssertsExtension"));
         $x("//*[@id=\"wiki-body\"]/div[1]/ol[4]/li").shouldHave(text("Using JUnit5 extend test class:"));
         $x("//*[@id=\"wiki-body\"]/div[1]/div[5]/pre/span[1]")
                 .shouldHave(text("@ExtendWith"));
