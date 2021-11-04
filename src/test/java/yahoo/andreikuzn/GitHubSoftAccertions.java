@@ -24,6 +24,8 @@ public class GitHubSoftAccertions {
         $(".gh-header-title").shouldHave(text("SoftAssertions"));
         //проверить, что внутри есть пример кода для JUnit5
         $("#wiki-body").shouldHave(text("com.codeborne.selenide.junit5.SoftAssertsExtension"));
+        $("#wiki-body").shouldHave(text("@ExtendWith"));
+        $("#wiki-body").shouldHave(text("SoftAssertsExtension"));
 
         //ниже неактуальный код, который был исправлен
         //$x("//*[@id=\"wiki-body\"]/div[1]/ol[1]/li[3]/code")
