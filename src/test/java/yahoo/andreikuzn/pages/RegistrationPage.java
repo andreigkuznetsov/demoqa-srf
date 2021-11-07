@@ -28,7 +28,7 @@ public class RegistrationPage {
             photoUpload = $("#uploadPicture"),
             addressInput = $("#currentAddress"),
             submitForm = $("#submit"),
-            resultsTable = $(".table-responsive"),
+//          resultsTable = $(".table-responsive"),
             closeModal = $("#closeLargeModal");
     public CalendarComponent calendar = new CalendarComponent();
     public SubjectComponent subject = new SubjectComponent();
@@ -91,10 +91,10 @@ public class RegistrationPage {
 
         return this;
     }
-    public RegistrationPage checkRegistrationResults(String key, String value) {
+    /* public RegistrationPage checkRegistrationResults(String key, String value) {
         resultsTable.shouldHave(text(key), text(value));
         return this;
-    }
+    }*/
     public RegistrationPage closeModalWidow() {
         closeModal.click();
 
