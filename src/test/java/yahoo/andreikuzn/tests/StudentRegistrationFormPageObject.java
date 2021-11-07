@@ -64,7 +64,7 @@ public class StudentRegistrationFormPageObject extends TestBase {
             String key = line.$("td").text(); // Student Name
             String expectedValue = expectedData.get(key);
             String actualValue = line.$("td", 1).text();
-            assertEquals(expectedValue, actualValue, "The actual value is not equal to expected value");
+            assertEquals(expectedValue, actualValue, "The actual value is not equal to the expected value");
         }
        registrationPage.closeModalWidow();
     }
