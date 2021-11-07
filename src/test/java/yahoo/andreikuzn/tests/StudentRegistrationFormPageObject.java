@@ -2,8 +2,6 @@ package yahoo.andreikuzn.tests;
 
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.sleep;
-
 public class StudentRegistrationFormPageObject extends TestBase {
 
     @Test
@@ -18,14 +16,14 @@ public class StudentRegistrationFormPageObject extends TestBase {
                 .typePhone(TestData.PHONE)
                 .typeBirthday(TestData.DAY, TestData.MONTH, TestData.YEAR)
                 .typeSubject(TestData.SEARCHLETTER, TestData.SUBJECT)
-                .typeState(TestData.STATE)
-                .typeCity(TestData.CITY)
                 .typeHobby(TestData.HOBBY)
                 .uploadImage(TestData.IMAGE)
                 .typeAddress(TestData.ADDRESS)
+                .typeState(TestData.STATE)
+                .typeCity(TestData.CITY)
                 .submitRegistration();
 
-        registrationPage.checkRegistrationResults ("Student name", TestData.FIRSTNAME + " " + TestData.LASTNAME)
+       registrationPage.checkRegistrationResults ("Student name", TestData.FIRSTNAME + " " + TestData.LASTNAME)
                 .checkRegistrationResults("Student Email", TestData.EMAIL)
                 .checkRegistrationResults("Gender", TestData.GENDER)
                 .checkRegistrationResults("Mobile", TestData.PHONE)
@@ -36,6 +34,6 @@ public class StudentRegistrationFormPageObject extends TestBase {
                 .checkRegistrationResults("Address", TestData.ADDRESS)
                 .checkRegistrationResults("State and City", TestData.STATE + " " + TestData.CITY);
 
-        registrationPage.closeModalWidow();
+       registrationPage.closeModalWidow();
     }
 }
