@@ -28,10 +28,8 @@ public class RegistrationPage {
             photoUpload = $("#uploadPicture"),
             addressInput = $("#currentAddress"),
             submitForm = $("#submit"),
-            modalTitle = $("#example-modal-sizes-title-lg"),
             resultsTable = $(".table-responsive"),
-            closeModal = $("#closeLargeModal"),
-            imageInput = $("#uploadPicture");
+            closeModal = $("#closeLargeModal");
     public CalendarComponent calendar = new CalendarComponent();
     public SubjectComponent subject = new SubjectComponent();
     public StateComponent state = new StateComponent();
@@ -99,6 +97,30 @@ public class RegistrationPage {
     }
     public RegistrationPage closeModalWidow() {
         closeModal.click();
+
+        return this;
+    }
+
+    public RegistrationPage typeBirthday(String day, String month, String year){
+        calendar.setDate(day, month, year);
+
+        return this;
+    }
+
+    public RegistrationPage typeSubject(String searchLetter, String subjects){
+        subject.setSubject(searchLetter, subjects);
+
+        return this;
+    }
+
+    public RegistrationPage typeCity(String cities){
+        city.setCity(cities);
+
+        return this;
+    }
+
+    public RegistrationPage typeState(String states){
+        state.setState(states);
 
         return this;
     }

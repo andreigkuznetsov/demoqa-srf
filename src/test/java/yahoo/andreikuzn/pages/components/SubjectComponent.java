@@ -8,9 +8,9 @@ import static com.codeborne.selenide.Selenide.$;
 public class SubjectComponent {
 
     private SelenideElement subjectInput = $("#subjectsInput");
-    public void setSubject(String searchLetter, String subject) {
+    public void setSubject(String searchLetter, String subjects) {
         subjectInput.click();
         subjectInput.setValue(searchLetter);
-        $(byText(subject)).click();
+        $(byText(subjects)).click();
     }
 }

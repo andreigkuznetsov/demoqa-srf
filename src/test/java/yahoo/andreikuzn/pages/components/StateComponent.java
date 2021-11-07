@@ -8,8 +8,8 @@ import static com.codeborne.selenide.Selenide.$;
 public class StateComponent {
 
     private SelenideElement stateInput = $("#state");
-    public void setState(String state) {
+    public void setState(String states) {
         stateInput.click();
-        $(byText(state)).click();
+        $(byText(states)).click();
     }
 }
