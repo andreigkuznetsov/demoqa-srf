@@ -2,10 +2,10 @@ package yahoo.andreikuzn;
 
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class GitHubSoftAccertions {
 
@@ -23,12 +23,17 @@ public class GitHubSoftAccertions {
         $(".markdown-body").$(byText("Soft assertions")).click();
         $(".gh-header-title").shouldHave(text("SoftAssertions"));
         //проверить, что внутри есть пример кода для JUnit5
-        $x("//*[@id=\"wiki-body\"]/div[1]/ol[1]/li[3]/code")
-                .shouldHave(text("com.codeborne.selenide.junit5.SoftAssertsExtension"));
-        $x("//*[@id=\"wiki-body\"]/div[1]/ol[4]/li").shouldHave(text("Using JUnit5 extend test class:"));
-        $x("//*[@id=\"wiki-body\"]/div[1]/div[5]/pre/span[1]")
-                .shouldHave(text("@ExtendWith"));
-        $x("//*[@id=\"wiki-body\"]/div[1]/div[5]/pre/span[2]")
-                .shouldHave(text("SoftAssertsExtension"));
+        $("#wiki-body").shouldHave(text("com.codeborne.selenide.junit5.SoftAssertsExtension"));
+        $("#wiki-body").shouldHave(text("@ExtendWith"));
+        $("#wiki-body").shouldHave(text("SoftAssertsExtension"));
+
+        //ниже неактуальный код, который был исправлен
+        //$x("//*[@id=\"wiki-body\"]/div[1]/ol[1]/li[3]/code")
+        //        .shouldHave(text("com.codeborne.selenide.junit5.SoftAssertsExtension"));
+        //$x("//*[@id=\"wiki-body\"]/div[1]/ol[4]/li").shouldHave(text("Using JUnit5 extend test class:"));
+        //$x("//*[@id=\"wiki-body\"]/div[1]/div[5]/pre/span[1]")
+        //        .shouldHave(text("@ExtendWith"));
+        //$x("//*[@id=\"wiki-body\"]/div[1]/div[5]/pre/span[2]")
+        //        .shouldHave(text("SoftAssertsExtension"));
     }
 }
