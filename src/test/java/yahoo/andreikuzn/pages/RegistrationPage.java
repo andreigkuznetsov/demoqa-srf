@@ -137,7 +137,7 @@ public class RegistrationPage {
     public RegistrationPage checkRegistrationResults() {
         ElementsCollection lines = $$(".table-responsive tbody tr").snapshot();
         for (SelenideElement line : lines) {
-            String key = line.$("td").text(); // Student Name
+            String key = line.$("td").text();
             String expectedValue = EXPECTEDDATA.get(key);
             String actualValue = line.$("td", 1).text();
             assertEquals(expectedValue, actualValue, "The actual value is not equal to the expected value");
