@@ -14,18 +14,18 @@ public class TestData {
 
     static String FIRSTNAME = FAKER.name().firstName(),
             LASTNAME = FAKER.name().lastName(),
-            ADDRESS = FAKER.address().streetAddress();
+            ADDRESS = FAKER.address().streetAddress(),
+            PHONE = FAKER.numerify("89########"),
+            GENDER = FAKER.options().option("Female", "Male", "Other"),
+            HOBBY = FAKER.options().option("Music", "Reading", "Sports");
 
     public static String IMAGENAME = "pic.jpg",
-            GENDER = "Male",
             EMAIL = "andrey@smith.com",
-            PHONE = "8950789456",
             MONTH = "October",
             YEAR = "1996",
             DAY = "30",
             SEARCHLETTER = "c",
             SUBJECT = "Economics",
-            HOBBY = "Sports",
             STATE = "Rajasthan",
             CITY = "Jaiselmer";
     // assert с коллекцией строк
@@ -44,16 +44,16 @@ public class TestData {
     }};
 
     /*      assert без коллекции строк
-        public static checkRegistrationResults ("Student name", TestData.FIRSTNAME + " " + TestData.LASTNAME)
-                .checkRegistrationResults("Student Email", TestData.EMAIL)
-                .checkRegistrationResults("Gender", TestData.GENDER)
-                .checkRegistrationResults("Mobile", TestData.PHONE)
-                .checkRegistrationResults("Date of Birth", TestData.DAY + " " + TestData.MONTH + "," + TestData.YEAR)
-                .checkRegistrationResults("Subjects", TestData.SUBJECT)
-                .checkRegistrationResults("Hobbies", TestData.HOBBY)
-                .checkRegistrationResults("Picture", TestData.IMAGENAME)
-                .checkRegistrationResults("Address", TestData.ADDRESS)
-                .checkRegistrationResults("State and City", TestData.STATE + " " + TestData.CITY);*/
+    public static checkRegistrationResults ("Student name", TestData.FIRSTNAME + " " + TestData.LASTNAME)
+            .checkRegistrationResults("Student Email", TestData.EMAIL)
+            .checkRegistrationResults("Gender", TestData.GENDER)
+            .checkRegistrationResults("Mobile", TestData.PHONE)
+            .checkRegistrationResults("Date of Birth", TestData.DAY + " " + TestData.MONTH + "," + TestData.YEAR)
+            .checkRegistrationResults("Subjects", TestData.SUBJECT)
+            .checkRegistrationResults("Hobbies", TestData.HOBBY)
+            .checkRegistrationResults("Picture", TestData.IMAGENAME)
+            .checkRegistrationResults("Address", TestData.ADDRESS)
+            .checkRegistrationResults("State and City", TestData.STATE + " " + TestData.CITY);*/
 
 
 }
