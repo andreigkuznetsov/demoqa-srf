@@ -1,20 +1,17 @@
 package yahoo.andreikuzn.pages;
 
-import yahoo.andreikuzn.pages.components.CalendarComponent;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import yahoo.andreikuzn.pages.components.CalendarComponent;
 import yahoo.andreikuzn.pages.components.CityComponent;
 import yahoo.andreikuzn.pages.components.StateComponent;
 import yahoo.andreikuzn.pages.components.SubjectComponent;
-import com.codeborne.selenide.ElementsCollection;
 
 import java.io.File;
-import java.util.Map;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static yahoo.andreikuzn.tests.TestData.EXPECTEDDATA;
 
