@@ -1,7 +1,5 @@
 package yahoo.andreikuzn.tests;
 
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.$$;
@@ -27,7 +25,7 @@ public class StudentRegistrationFormPageObject extends TestBase {
                 .typeState(TestData.STATE)
                 .typeCity(TestData.CITY)
                 .submitRegistration()
-                .checkRegistrationResults(TestData.EXPECTEDDATA)
+                .checkRegistrationResults()
                 .closeModalWidow();
 
     }

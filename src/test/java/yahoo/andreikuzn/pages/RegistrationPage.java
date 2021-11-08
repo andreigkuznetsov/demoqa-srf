@@ -141,7 +141,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage checkRegistrationResults(Map<String, String> expectedValues) {
+    public RegistrationPage checkRegistrationResults() {
         ElementsCollection lines = $$(".table-responsive tbody tr").snapshot();
         for (SelenideElement line : lines) {
             String key = line.$("td").text(); // Student Name
