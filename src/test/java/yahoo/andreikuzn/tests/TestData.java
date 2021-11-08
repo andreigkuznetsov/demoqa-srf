@@ -15,7 +15,7 @@ public class TestData {
     static String FIRSTNAME = FAKER.name().firstName(),
             LASTNAME = FAKER.name().lastName(),
             ADDRESS = FAKER.address().streetAddress(),
-            PHONE = FAKER.numerify("89########"),
+            PHONE = FAKER.numerify("9#########"),
             GENDER = FAKER.options().option("Female", "Male", "Other"),
             HOBBY = FAKER.options().option("Music", "Reading", "Sports");
 

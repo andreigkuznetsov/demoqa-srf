@@ -22,6 +22,7 @@ public class StudentRegistrationFormPageObject extends TestBase {
                 .typeState(TestData.STATE)
                 .typeCity(TestData.CITY)
                 .submitRegistration()
+                .checkModalText()
                 .checkRegistrationResults()
                 .closeModalWidow();
 

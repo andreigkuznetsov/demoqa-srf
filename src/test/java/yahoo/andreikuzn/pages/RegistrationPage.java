@@ -17,7 +17,8 @@ import static yahoo.andreikuzn.tests.TestData.EXPECTEDDATA;
 
 public class RegistrationPage {
 
-    private final String FORM_TITLE = "Student Registration Form";
+    private final String FORM_TITLE = "Student Registration Form",
+            MODAL_TITLE = "Thanks for submitting the form";
     private SelenideElement
             formTitle = $(".practice-form-wrapper"),
             scrollPage = $("#submit"),
@@ -31,6 +32,7 @@ public class RegistrationPage {
             addressInput = $("#currentAddress"),
             submitForm = $("#submit"),
     //          resultsTable = $(".table-responsive"), локатор для assert без коллекции строк
+            textModal = $("#example-modal-sizes-title-lg"),
             closeModal = $("#closeLargeModal");
     public CalendarComponent calendar = new CalendarComponent();
     public SubjectComponent subject = new SubjectComponent();
@@ -130,6 +132,12 @@ public class RegistrationPage {
 
     public RegistrationPage typeState(String states) {
         state.setState(states);
+
+        return this;
+    }
+
+    public RegistrationPage checkModalText() {
+        textModal.shouldHave(text(MODAL_TITLE));
 
         return this;
     }
