@@ -28,7 +28,7 @@ public class TestData {
             HOBBY = "Sports",
             STATE = "Rajasthan",
             CITY = "Jaiselmer";
-
+    // assert с коллекцией строк
     public static Map<String, String> EXPECTEDDATA = new HashMap<String, String>()
     {{
             put("Student Name", FIRSTNAME + " " + LASTNAME);
@@ -43,7 +43,7 @@ public class TestData {
             put("State and City", STATE + " " + CITY);
     }};
 
-    /*      Проверка без коллекции строк
+    /*      assert без коллекции строк
         public static checkRegistrationResults ("Student name", TestData.FIRSTNAME + " " + TestData.LASTNAME)
                 .checkRegistrationResults("Student Email", TestData.EMAIL)
                 .checkRegistrationResults("Gender", TestData.GENDER)

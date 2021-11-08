@@ -107,10 +107,6 @@ public class RegistrationPage {
         return this;
     }
 
-    /* public RegistrationPage checkRegistrationResults(String key, String value) {
-        resultsTable.shouldHave(text(key), text(value));
-        return this;
-    }*/
     public RegistrationPage closeModalWidow() {
         closeModal.click();
 
@@ -140,7 +136,7 @@ public class RegistrationPage {
 
         return this;
     }
-
+    // assert с коллекцией строк
     public RegistrationPage checkRegistrationResults() {
         ElementsCollection lines = $$(".table-responsive tbody tr").snapshot();
         for (SelenideElement line : lines) {
@@ -151,6 +147,11 @@ public class RegistrationPage {
         }
         return this;
     }
+    // assert без коллекции строк
+      /* public RegistrationPage checkRegistrationResults(String key, String value) {
+        resultsTable.shouldHave(text(key), text(value));
+        return this;
+    }*/
 }
 
 
