@@ -31,7 +31,7 @@ public class RegistrationPage {
             addressInput = $("#currentAddress"),
             submitForm = $("#submit"),
     //          resultsTable = $(".table-responsive"), локатор для assert без коллекции строк
-    closeModal = $("#closeLargeModal");
+            closeModal = $("#closeLargeModal");
     public CalendarComponent calendar = new CalendarComponent();
     public SubjectComponent subject = new SubjectComponent();
     public StateComponent state = new StateComponent();
