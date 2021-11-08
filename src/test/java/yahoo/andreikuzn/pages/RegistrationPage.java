@@ -30,7 +30,7 @@ public class RegistrationPage {
             photoUpload = $("#uploadPicture"),
             addressInput = $("#currentAddress"),
             submitForm = $("#submit"),
-    //          resultsTable = $(".table-responsive"),
+    //          resultsTable = $(".table-responsive"), локатор для assert без коллекции строк
     closeModal = $("#closeLargeModal");
     public CalendarComponent calendar = new CalendarComponent();
     public SubjectComponent subject = new SubjectComponent();
