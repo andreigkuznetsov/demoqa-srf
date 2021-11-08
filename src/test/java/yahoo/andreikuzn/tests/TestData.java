@@ -3,28 +3,57 @@ package yahoo.andreikuzn.tests;
 import com.github.javafaker.Faker;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 public class TestData {
 
     public static Faker FAKER = new Faker(new Locale("ru"));
     public static File IMAGE = new File("src/test/resources/pic.jpg");
 
-    static String FIRSTNAME = FAKER.name().firstName();
-    static String LASTNAME = FAKER.name().lastName();
-    static String ADDRESS = FAKER.address().streetAddress();
+    static String FIRSTNAME = FAKER.name().firstName(),
+            LASTNAME = FAKER.name().lastName(),
+            ADDRESS = FAKER.address().streetAddress();
 
-    public static String IMAGENAME = "pic.jpg";
-    public static String GENDER = "Male";
-    public static String EMAIL = "andrey@smith.com";
-    public static String PHONE = "8950789456";
-    public static String MONTH = "October";
-    public static String YEAR = "1996";
-    public static String DAY = "30";
-    public static String SEARCHLETTER = "c";
-    public static String SUBJECT = "Economics";
-    public static String HOBBY = "Sports";
-    public static String STATE = "Rajasthan";
-    public static String CITY = "Jaiselmer";
+    public static String IMAGENAME = "pic.jpg",
+            GENDER = "Male",
+            EMAIL = "andrey@smith.com",
+            PHONE = "8950789456",
+            MONTH = "October",
+            YEAR = "1996",
+            DAY = "30",
+            SEARCHLETTER = "c",
+            SUBJECT = "Economics",
+            HOBBY = "Sports",
+            STATE = "Rajasthan",
+            CITY = "Jaiselmer";
 
-    }
+    public static Map<String, String> EXPECTEDDATA = new HashMap<String, String>()
+    {{
+            put("Student Name", FIRSTNAME + " " + LASTNAME);
+            put("Student Email", EMAIL);
+            put("Gender", GENDER);
+            put("Mobile", PHONE);
+            put("Date of Birth", DAY + " " + MONTH + "," + YEAR);
+            put("Subjects", SUBJECT);
+            put("Hobbies", HOBBY);
+            put("Picture", IMAGENAME);
+            put("Address", ADDRESS);
+            put("State and City", STATE + " " + CITY);
+    }};
+
+    /*      Проверка без коллекции строк
+        public static checkRegistrationResults ("Student name", TestData.FIRSTNAME + " " + TestData.LASTNAME)
+                .checkRegistrationResults("Student Email", TestData.EMAIL)
+                .checkRegistrationResults("Gender", TestData.GENDER)
+                .checkRegistrationResults("Mobile", TestData.PHONE)
+                .checkRegistrationResults("Date of Birth", TestData.DAY + " " + TestData.MONTH + "," + TestData.YEAR)
+                .checkRegistrationResults("Subjects", TestData.SUBJECT)
+                .checkRegistrationResults("Hobbies", TestData.HOBBY)
+                .checkRegistrationResults("Picture", TestData.IMAGENAME)
+                .checkRegistrationResults("Address", TestData.ADDRESS)
+                .checkRegistrationResults("State and City", TestData.STATE + " " + TestData.CITY);*/
+
+
+}

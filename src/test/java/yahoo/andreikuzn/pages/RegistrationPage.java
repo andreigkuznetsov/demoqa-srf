@@ -5,13 +5,18 @@ import com.codeborne.selenide.SelenideElement;
 import yahoo.andreikuzn.pages.components.CityComponent;
 import yahoo.andreikuzn.pages.components.StateComponent;
 import yahoo.andreikuzn.pages.components.SubjectComponent;
+import com.codeborne.selenide.ElementsCollection;
 
 import java.io.File;
+import java.util.Map;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.$$;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static yahoo.andreikuzn.tests.TestData.EXPECTEDDATA;
 
 public class RegistrationPage {
 
@@ -28,8 +33,8 @@ public class RegistrationPage {
             photoUpload = $("#uploadPicture"),
             addressInput = $("#currentAddress"),
             submitForm = $("#submit"),
-//          resultsTable = $(".table-responsive"),
-            closeModal = $("#closeLargeModal");
+    //          resultsTable = $(".table-responsive"),
+    closeModal = $("#closeLargeModal");
     public CalendarComponent calendar = new CalendarComponent();
     public SubjectComponent subject = new SubjectComponent();
     public StateComponent state = new StateComponent();
@@ -41,56 +46,67 @@ public class RegistrationPage {
 
         return this;
     }
+
     public RegistrationPage scrollPageUp() {
         scrollPage.scrollIntoView(true);
 
         return this;
     }
+
     public RegistrationPage typeFirstName(String value) {
         firstNameInput.setValue(value);
 
         return this;
     }
+
     public RegistrationPage typeLastName(String value) {
         lastNameInput.setValue(value);
 
         return this;
     }
+
     public RegistrationPage typeEmail(String value) {
         emailInput.setValue(value);
 
         return this;
     }
+
     public RegistrationPage makeGenderChoice(String value) {
         genderChoice.$(byText(value)).click();
 
         return this;
     }
+
     public RegistrationPage typePhone(String value) {
         phoneInput.setValue(value);
 
         return this;
     }
+
     public RegistrationPage typeHobby(String value) {
         hobbyInput.$(byText(value)).click();
 
         return this;
     }
+
     public RegistrationPage uploadImage(File image) {
         photoUpload.uploadFile(image);
 
         return this;
     }
+
     public RegistrationPage typeAddress(String value) {
         addressInput.setValue(value);
 
         return this;
     }
+
     public RegistrationPage submitRegistration() {
         submitForm.click();
 
         return this;
     }
+
     /* public RegistrationPage checkRegistrationResults(String key, String value) {
         resultsTable.shouldHave(text(key), text(value));
         return this;
@@ -101,27 +117,40 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage typeBirthday(String day, String month, String year){
+    public RegistrationPage typeBirthday(String day, String month, String year) {
         calendar.setDate(day, month, year);
 
         return this;
     }
 
-    public RegistrationPage typeSubject(String searchLetter, String subjects){
+    public RegistrationPage typeSubject(String searchLetter, String subjects) {
         subject.setSubject(searchLetter, subjects);
 
         return this;
     }
 
-    public RegistrationPage typeCity(String cities){
+    public RegistrationPage typeCity(String cities) {
         city.setCity(cities);
 
         return this;
     }
 
-    public RegistrationPage typeState(String states){
+    public RegistrationPage typeState(String states) {
         state.setState(states);
 
         return this;
     }
+
+    public RegistrationPage checkRegistrationResults(Map<String, String> expectedValues) {
+        ElementsCollection lines = $$(".table-responsive tbody tr").snapshot();
+        for (SelenideElement line : lines) {
+            String key = line.$("td").text(); // Student Name
+            String expectedValue = EXPECTEDDATA.get(key);
+            String actualValue = line.$("td", 1).text();
+            assertEquals(expectedValue, actualValue, "The actual value is not equal to the expected value");
+        }
+        return this;
+    }
 }
+
+
