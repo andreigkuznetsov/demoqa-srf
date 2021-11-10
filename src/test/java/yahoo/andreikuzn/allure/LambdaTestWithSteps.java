@@ -22,7 +22,7 @@ public class LambdaTestWithSteps extends TestBase {
     @Owner("Andrei Kuznetsov")
     @Feature("Repository webpage")
     @Story("Find Issue link, not find Links link")
-    @DisplayName("Lambda Test with Steps and Screenshot")
+    @DisplayName("Lambda Test with Steps")
     @Link(name = "GitHub repository", url = "https://github.com")
     public void checkingTheIssueOnWebpage() {
         AllureLifecycle lifecycle = Allure.getLifecycle();
