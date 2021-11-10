@@ -1,1 +1,1 @@
-This is DemoQA filling form automative testing project 
+This is Allure reporting automative testing project 
