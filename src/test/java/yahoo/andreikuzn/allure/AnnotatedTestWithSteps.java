@@ -18,7 +18,7 @@ public class AnnotatedTestWithSteps extends TestBase {
     @Owner("Andrei Kuznetsov")
     @Feature("Repository webpage")
     @Story("Find Issue link, not find Links link")
-    @DisplayName("Annotated Test with Screenshot")
+    @DisplayName("Annotated Test")
     @Link(name = "GitHub repository", url = "https://github.com")
     public void checkingTheIssueOnWebpage() {
         steps.openMainPage();
