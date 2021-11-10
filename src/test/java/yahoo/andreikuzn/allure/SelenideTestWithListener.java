@@ -22,7 +22,7 @@ public class SelenideTestWithListener extends TestBase{
     @Feature("Repository webpage")
     @Story("Find Issue link, not find Links link")
     @DisplayName("Selenide Test with Listener")
-    @Link(name = "GitHub repository", url = "https://github.com")
+    @Link(name = "GitHub repository", url = "https://github.com/andreigkuznetsov/demoqa-srf/")
 
     public void checkingTheIssueOnWebpage() {
         AllureLifecycle lifecycle = Allure.getLifecycle();

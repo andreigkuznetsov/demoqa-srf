@@ -19,7 +19,7 @@ public class AnnotatedTestWithSteps extends TestBase {
     @Feature("Repository webpage")
     @Story("Find Issue link, not find Links link")
     @DisplayName("Annotated Test")
-    @Link(name = "GitHub repository", url = "https://github.com")
+    @Link(name = "GitHub repository", url = "https://github.com/andreigkuznetsov/demoqa-srf/")
     public void checkingTheIssueOnWebpage() {
         steps.openMainPage();
         steps.searchForRepository(REPOSITORY);
