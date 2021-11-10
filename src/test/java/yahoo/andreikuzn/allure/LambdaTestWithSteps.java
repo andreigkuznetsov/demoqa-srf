@@ -21,7 +21,7 @@ public class LambdaTestWithSteps extends TestBase {
     @Test
     @Owner("Andrei Kuznetsov")
     @Feature("Repository webpage")
-    @Story("Find Issue link")
+    @Story("Find Issue link, not find Links link")
     @DisplayName("Lambda Test with Steps and Screenshot")
     @Link(name = "GitHub repository", url = "https://github.com")
     public void checkingTheIssueOnWebpage() {

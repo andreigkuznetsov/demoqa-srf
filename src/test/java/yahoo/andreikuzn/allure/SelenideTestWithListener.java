@@ -19,7 +19,7 @@ public class SelenideTestWithListener extends TestBase{
     @Test
     @Owner("Andrei Kuznetsov")
     @Feature("Repository webpage")
-    @Story("Find Issue link")
+    @Story("Find Issue link, not find Links link")
     @DisplayName("Selenide Test with Listener")
     @Link(name = "GitHub repository", url = "https://github.com")
 
