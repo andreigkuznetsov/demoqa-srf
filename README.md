@@ -1,1 +1,1 @@
-This is Allure reporting automative testing project 
+This is files automative testing project 
