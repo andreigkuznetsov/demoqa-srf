@@ -1,7 +1,5 @@
 package yahoo.andreikuzn.files;
 
-import java.io.File;
-
 public class TestData {
 
     public static String UPLOADFILESLINK = "http://file.karelia.ru/";
