@@ -44,7 +44,7 @@ public class FilesTests extends TestBase {
     @DisplayName("Работа с .pdf файлом (скачивание и поиск по содержимому)")
     void downloadPdfFileAndSearchInsideIt() throws IOException {
         open(DOWNLOADPDFFILELINK);
-        //$(".CookieAcceptance-accept").click(); необходимо раскомментировать, если тест запускается отдельно
+        //$(".CookieAcceptance-accept").click(); //необходимо раскомментировать, если тест запускается отдельно
         File pdf = $("#downloadButton").download();
         PDF parsedPdf = new PDF(pdf);
         Assertions.assertEquals(false, parsedPdf.encrypted);
@@ -54,7 +54,7 @@ public class FilesTests extends TestBase {
     @DisplayName("Работа с .xls файлом (скачивание и поиск по содержимому)")
     void downloadXlsFileAndSearchInsideIt() throws IOException {
         open(DOWNLOADXLSFILELINK);
-        //$(".CookieAcceptance-accept").click(); необходимо раскомментировать, если тест запускается отдельно
+        //$(".CookieAcceptance-accept").click(); //необходимо раскомментировать, если тест запускается отдельно
         File file = $("#downloadButton").download();
 
         XLS parsedXls = new XLS(file);
