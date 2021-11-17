@@ -1,4 +1,4 @@
-package yahoo.andreikuzn.files;
+package yahoo.andreikuzn.paramstests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
