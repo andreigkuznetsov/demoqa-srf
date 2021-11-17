@@ -2,7 +2,7 @@ package yahoo.andreikuzn.files;
 
 public class TestData {
 
-    public static String UPLOADFILESLINK = "http://file.karelia.ru/";
+    public static String OPENLINK = "https://xn--80aiqenb1e.xn--80asehdb/";
     public static String DOWNLOADTXTFILELINK = "https://www.mediafire.com/file/ljpetr163biym4y/doc.txt/file";
     public static String DOWNLOADPDFFILELINK = "https://www.mediafire.com/file/zu932e8fbbrk0tf/doc1.pdf/file";
     public static String DOWNLOADXLSFILELINK = "https://www.mediafire.com/file/yqzr13lmgilg8we/doc2.xls/file";
