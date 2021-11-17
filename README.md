@@ -1,1 +1,1 @@
-This is files lesson on automative testing project 
+This is JUnit5 lesson on automative testing project 
