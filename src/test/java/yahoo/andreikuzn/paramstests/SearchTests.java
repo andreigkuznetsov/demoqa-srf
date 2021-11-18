@@ -17,7 +17,8 @@ import static yahoo.andreikuzn.paramstests.TestData.OPENLINK;
 
 public class SearchTests extends TestBase {
 
-    @DisplayName("Проверка поиска в резделе Кофе молотый")
+    @ParameterizedTest
+    @DisplayName("Проверка поиска и отображения товаров в резделе Кофе молотый")
     @Tag("Critical")
     @CsvSource(value = {
             "BAZZARA : BAZZARA",
@@ -29,8 +30,7 @@ public class SearchTests extends TestBase {
 
     },
             delimiter = ':')
-    @ParameterizedTest
-    void groundCaffeSearchTests(String searchValue, String expectedResult) {
+    void groundCaffeSearchAndDisplayTests(String searchValue, String expectedResult) {
         open(OPENLINK);
         $("input[type='text']").setValue(searchValue);
         $("button[type='button']").click();
@@ -38,7 +38,8 @@ public class SearchTests extends TestBase {
                 .shouldHave(CollectionCondition.texts(expectedResult));
     }
 
-    @DisplayName("Проверка отображения товаров в разделе КАПСУЛЫ NESPRESSO")
+    @ParameterizedTest
+    @DisplayName("Проверка поиска и отображения товаров в разделе КАПСУЛЫ NESPRESSO")
     @Tag("Critical")
     @ValueSource(strings = {"BAZZARA Dodicigrancru",
             "BLUES ALLEGRO ESPRESSO",
@@ -52,8 +53,7 @@ public class SearchTests extends TestBase {
             "BLUES STRETTO ESPRESSO",
             "BLUES VIVA ESPRESSO"
     })
-    @ParameterizedTest
-    void caffeNespressoDisplayTests(String searchValue) {
+    void caffeNespressoSearchAndDisplayTests(String searchValue) {
         open(OPENLINK);
         $("input[type='text']").setValue(searchValue);
         $("button[type='button']").click();
@@ -93,8 +93,8 @@ public class SearchTests extends TestBase {
                 Arguments.of("ШОКОЛАДНАЯ ПАСТА")
         );
     }
-    @MethodSource
     @ParameterizedTest
+    @MethodSource
     void siteNavigationMenuElementsDisplayTests(String searchValue) {
         open(OPENLINK);
         $$(".list-group")
