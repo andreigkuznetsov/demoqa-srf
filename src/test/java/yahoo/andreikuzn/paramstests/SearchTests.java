@@ -103,7 +103,7 @@ public class SearchTests extends TestBase {
     @DisplayName("Проверка поиска и отображения товаров в разделе Напитки")
     @Tag("Critical")
     @EnumSource(SearchRequest.class)
-    void SearchAndDisplayTestsEnum(SearchRequest value) {
+    void drinksSectionSearchAndDisplayTestsEnum(SearchRequest value) {
         open(OPENLINK);
         $("input[type='text']").setValue(value.name());
         $("button[type='button']").click();
