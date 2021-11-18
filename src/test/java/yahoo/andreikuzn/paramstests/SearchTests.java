@@ -5,10 +5,7 @@ import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.*;
 
 import java.util.stream.Stream;
 
@@ -102,4 +99,17 @@ public class SearchTests extends TestBase {
                 .shouldBe(Condition.visible);
     }
 
+    @ParameterizedTest
+    @DisplayName("Проверка поиска и отображения товаров в разделе Напитки")
+    @Tag("Critical")
+    @EnumSource(SearchRequest.class)
+    void SearchAndDisplayTestsEnum(SearchRequest value) {
+        open(OPENLINK);
+        $("input[type='text']").setValue(value.name());
+        $("button[type='button']").click();
+        $$("#content")
+                .find(Condition.text(value.name()))
+                .shouldBe(Condition.visible);
+
+    }
 }
