@@ -1,1 +1,1 @@
-This is First Git 
+This is First Git lesson
