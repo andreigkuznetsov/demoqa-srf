@@ -27,6 +27,7 @@ public class GitHubSoftAccertions {
         $("#wiki-body").shouldHave(text("@ExtendWith"));
         $("#wiki-body").shouldHave(text("SoftAssertsExtension"));
 
+
         //ниже неактуальный код, который был исправлен
         //$x("//*[@id=\"wiki-body\"]/div[1]/ol[1]/li[3]/code")
         //        .shouldHave(text("com.codeborne.selenide.junit5.SoftAssertsExtension"));

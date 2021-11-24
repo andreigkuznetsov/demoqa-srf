@@ -23,10 +23,8 @@ public class StudentRegistrationForm {
         //открываем страницу с формой
         open("https://demoqa.com/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
-
         //скрол страницы, т.к. нижнюю видимую часть формы закрывает баннер
         $("#submit").scrollIntoView(true);
-
         //заполняем и отправляем форму
         $("#firstName").setValue("Andrey");
         $("#lastName").setValue("Smith");
