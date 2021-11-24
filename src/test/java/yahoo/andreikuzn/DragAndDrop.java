@@ -11,7 +11,7 @@ public class DragAndDrop {
     @Test
     void dragAndDropSquares() {
         //Открыть https://the-internet.herokuapp.com/drag_and_drop
-        open ("https://the-internet.herokuapp.com/drag_and_drop");
+        open("https://the-internet.herokuapp.com/drag_and_drop");
         $(".example h3").shouldHave(text("Drag and Drop"));
 
         $("#column-a header").shouldHave(text("A"));
