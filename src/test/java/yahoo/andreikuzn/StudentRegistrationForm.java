@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
-import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -29,7 +28,7 @@ public class StudentRegistrationForm {
         $("#firstName").setValue("Andrey");
         $("#lastName").setValue("Smith");
         $("#userEmail").setValue("andrey@Smith.com");
-        $("#genterWrapper").$(byText("Male")).click(); 
+        $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("8950789456");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOptionByValue("9");

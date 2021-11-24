@@ -28,10 +28,8 @@ public class RegistrationPage {
             photoUpload = $("#uploadPicture"),
             addressInput = $("#currentAddress"),
             submitForm = $("#submit"),
-            modalTitle = $("#example-modal-sizes-title-lg"),
             resultsTable = $(".table-responsive"),
-            closeModal = $("#closeLargeModal"),
-            imageInput = $("#uploadPicture");
+            closeModal = $("#closeLargeModal");
     public CalendarComponent calendar = new CalendarComponent();
     public SubjectComponent subject = new SubjectComponent();
     public StateComponent state = new StateComponent();
@@ -43,60 +41,72 @@ public class RegistrationPage {
 
         return this;
     }
+
     public RegistrationPage scrollPageUp() {
         scrollPage.scrollIntoView(true);
 
         return this;
     }
+
     public RegistrationPage typeFirstName(String value) {
         firstNameInput.setValue(value);
 
         return this;
     }
+
     public RegistrationPage typeLastName(String value) {
         lastNameInput.setValue(value);
 
         return this;
     }
+
     public RegistrationPage typeEmail(String value) {
         emailInput.setValue(value);
 
         return this;
     }
+
     public RegistrationPage makeGenderChoice(String value) {
         genderChoice.$(byText(value)).click();
 
         return this;
     }
+
     public RegistrationPage typePhone(String value) {
         phoneInput.setValue(value);
 
         return this;
     }
+
     public RegistrationPage typeHobby(String value) {
         hobbyInput.$(byText(value)).click();
 
         return this;
     }
+
     public RegistrationPage uploadImage(File image) {
         photoUpload.uploadFile(image);
 
         return this;
     }
+
     public RegistrationPage typeAddress(String value) {
         addressInput.setValue(value);
 
         return this;
     }
+
     public RegistrationPage submitRegistration() {
         submitForm.click();
 
         return this;
     }
+
     public RegistrationPage checkRegistrationResults(String key, String value) {
         resultsTable.shouldHave(text(key), text(value));
         return this;
     }
+
     public RegistrationPage closeModalWidow() {
         closeModal.click();
 
